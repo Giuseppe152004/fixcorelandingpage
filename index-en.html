@@ -1,0 +1,902 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FixCore — CMMS Platform for Industrial Maintenance</title>
+  <meta name="description" content="Digitize your work orders, manage spare parts, and receive WhatsApp alerts. The SaaS platform that technicians and plant managers love to use." />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Favicon (inline SVG) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a1628'/><polygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='%232d7dd2' stroke-width='2.5'/><circle cx='16' cy='16' r='4' fill='%234da3ff'/></svg>" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner">
+      <a href="#" class="header__logo" id="logo">
+        <svg class="header__logo-icon" width="36" height="36" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 93,27.5 93,72.5 50,95 7,72.5 7,27.5" fill="none" stroke="url(#logoGrad)" stroke-width="7" stroke-linejoin="round"/>
+          <polygon points="50,22 78,38 78,62 50,78 22,62 22,38" fill="none" stroke="url(#logoGrad)" stroke-width="5" stroke-linejoin="round" opacity="0.5"/>
+          <circle cx="50" cy="50" r="10" fill="url(#dotGrad)"/>
+          <defs>
+            <linearGradient id="logoGrad" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0%" stop-color="#1e56a0"/>
+              <stop offset="100%" stop-color="#4da3ff"/>
+            </linearGradient>
+            <radialGradient id="dotGrad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#4da3ff"/>
+              <stop offset="100%" stop-color="#2d7dd2"/>
+            </radialGradient>
+          </defs>
+        </svg>
+        <span class="header__logo-text">Fix<span>Core</span></span>
+      </a>
+
+      <nav class="header__nav" id="mainNav">
+        <a href="#features">Features</a>
+        <a href="#solutions">Solutions</a>
+        <a href="#pricing">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-toggle">
+          <a href="index.html" class="lang-toggle__btn active" onclick="saveScroll()">ES</a>
+          <a href="index-en.html" class="lang-toggle__btn" onclick="saveScroll()">EN</a>
+        </div>
+        <a href="login.html#login" class="btn btn--ghost" id="loginBtn">Log In</a>
+        <a href="login.html#register" class="btn btn--primary" id="demoBtn">Request Demo</a>
+      </div>
+
+      <button class="header__mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ===== HERO SECTION ===== -->
+  <section class="hero" id="hero">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <!-- Badge -->
+        <div class="hero__badge">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+            <path d="M8 1L10.2 5.5L15 6.2L11.5 9.6L12.4 14.3L8 12L3.6 14.3L4.5 9.6L1 6.2L5.8 5.5L8 1Z" fill="currentColor"/>
+          </svg>
+          50+ industrial plants already optimize their operations
+        </div>
+
+        <!-- Title -->
+        <h1 class="hero__title">
+          Eliminate <span>downtime</span> in your industrial plant.
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="hero__subtitle">
+          Digitize your work orders, manage spare parts, and receive WhatsApp alerts. The SaaS platform that technicians and plant managers love to use.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="hero__cta">
+          <a href="login.html#register" class="btn btn--primary btn--lg" id="heroPrimaryBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+            Prueba Gratis
+          </a>
+          <a href="#how-it-works" class="btn btn--secondary btn--lg" id="heroSecondaryBtn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            Ver Funcionamiento
+          </a>
+        </div>
+
+        <!-- Social Proof -->
+        <div class="hero__social-proof">
+          <div class="hero__stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <span class="hero__stars-text">4.9/5 from 120+ reviews</span>
+          </div>
+
+          <div class="hero__logos">
+            <span>Trusted by:</span>
+            <div class="hero__logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+              InduPro
+            </div>
+            <div class="hero__logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
+              SolMex
+            </div>
+            <div class="hero__logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 3l-4 4-4-4"/></svg>
+              AceroVit
+            </div>
+            <div class="hero__logo-item">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+              MetalCorp
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visual Mockup -->
+      <div class="hero__visual">
+        <div class="hero__visual-dashboard">
+          <img src="assets/img/dashboard-mockup.png" alt="Dashboard FixCore - Gráficos de MTTR y disponibilidad de activos" loading="eager" />
+        </div>
+        <div class="hero__visual-phone">
+          <img src="assets/img/phone-qr-mockup.png" alt="App móvil FixCore escaneando código QR industrial" loading="eager" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STATS BAR ===== -->
+  <section class="stats-bar" id="stats">
+    <div class="container stats-bar__inner">
+      <div class="stats-bar__item animate-on-scroll">
+        <div class="stats-bar__number"><span data-count="30">0</span>%</div>
+        <div class="stats-bar__label">MTTR Reduction</div>
+      </div>
+      <div class="stats-bar__item animate-on-scroll">
+        <div class="stats-bar__number">+<span data-count="10000">0</span></div>
+        <div class="stats-bar__label">WOs Resolved</div>
+      </div>
+      <div class="stats-bar__item animate-on-scroll">
+        <div class="stats-bar__number"><span data-count="99">0</span>%</div>
+        <div class="stats-bar__label">Asset Availability</div>
+      </div>
+      <div class="stats-bar__item animate-on-scroll">
+        <div class="stats-bar__number"><span data-count="0" data-fixed="true">0</span></div>
+        <div class="stats-bar__label">Paper Used</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FEATURES ===== -->
+  <section class="features section" id="features">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          Features
+        </span>
+        <h2 class="section-title">A frictionless maintenance experience.</h2>
+        <p class="section-subtitle">Every module designed to eliminate paper, reduce errors, and accelerate failure resolution.</p>
+      </div>
+
+      <div class="features__grid">
+        <!-- Card 1: Reportes QR -->
+        <div class="feature-card animate-on-scroll" id="featureQR">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="2" width="8" height="8" rx="1"/><rect x="14" y="2" width="8" height="8" rx="1"/>
+              <rect x="2" y="14" width="8" height="8" rx="1"/><path d="M14 14h3v3"/><path d="M20 14v3h-3"/><path d="M14 20h6"/><path d="M20 20v-3"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">QR Reports</h3>
+          <p class="feature-card__desc">Scan and report failures in less than 3 clicks from any smartphone. No apps to download.</p>
+        </div>
+
+        <!-- Card 2: Alertas -->
+        <div class="feature-card animate-on-scroll" id="featureAlerts">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Automated Alerts</h3>
+          <p class="feature-card__desc">Receive critical stop notifications directly on WhatsApp (via n8n). In real-time.</p>
+        </div>
+
+        <!-- Card 3: OTs -->
+        <div class="feature-card animate-on-scroll" id="featureOTs">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">WO Management</h3>
+          <p class="feature-card__desc">Smart assignment, tool checklists, and digital closing. Fully traceable.</p>
+        </div>
+
+        <!-- Card 4: Inventario -->
+        <div class="feature-card animate-on-scroll" id="featureInventory">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Inventory Control</h3>
+          <p class="feature-card__desc">Real-time stock deduction and automated restocking alerts.</p>
+        </div>
+
+        <!-- Card 5: Multi-Plant -->
+        <div class="feature-card animate-on-scroll" id="featureMultiPlant">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/>
+              <path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 10h.01"/><path d="M12 14h.01"/><path d="M16 14h.01"/><path d="M8 14h.01"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Multi-Plant Architecture</h3>
+          <p class="feature-card__desc">Unified portal ideal for contractor firms managing multiple clients.</p>
+        </div>
+
+        <!-- Card 6: Reportes -->
+        <div class="feature-card animate-on-scroll" id="featureReports">
+          <div class="feature-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+              <line x1="2" y1="20" x2="22" y2="20"/>
+            </svg>
+          </div>
+          <h3 class="feature-card__title">Management Reports</h3>
+          <p class="feature-card__desc">Automatic MTTR and availability calculation with one click. Data-driven decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works section section--light" id="how-it-works">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Simple Process
+        </span>
+        <h2 class="section-title">Optimize your maintenance in 3 simple steps.</h2>
+        <p class="section-subtitle">From reported failure to repaired machine, paperless and bottleneck-free.</p>
+      </div>
+
+      <div class="how-it-works__steps">
+        <div class="step-card animate-on-scroll" id="step1">
+          <div class="step-card__number">1</div>
+          <h3 class="step-card__title">Scan and Report</h3>
+          <p class="step-card__desc">The operator reports the failure in front of the machine with a simple QR scan from their phone.</p>
+        </div>
+
+        <div class="step-card animate-on-scroll" id="step2">
+          <div class="step-card__number">2</div>
+          <h3 class="step-card__title">Assign and Repair</h3>
+          <p class="step-card__desc">Automatic notification to the exact technician with the correct tool and spare part.</p>
+        </div>
+
+        <div class="step-card animate-on-scroll" id="step3">
+          <div class="step-card__number">3</div>
+          <h3 class="step-card__title">Measure and Optimize</h3>
+          <p class="step-card__desc">The plant manager views response time reports and makes better decisions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOLUTIONS ===== -->
+  <section class="solutions section" id="solutions">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Soluciones
+        </span>
+        <h2 class="section-title">Designed for every link in your operation.</h2>
+        <p class="section-subtitle">Each role has its own optimized view and experience.</p>
+      </div>
+
+      <div class="solutions__grid">
+        <!-- Card 1: Jefes de Planta -->
+        <div class="solution-card solution-card--orange animate-on-scroll" id="solutionPlant">
+          <div class="solution-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15a3 3 0 100-6 3 3 0 000 6z"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 01-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06a1.65 1.65 0 00.33-1.82 1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06a1.65 1.65 0 001.82.33H9a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06a1.65 1.65 0 00-.33 1.82V9c.26.604.852.997 1.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
+          </div>
+          <span class="solution-card__tag">Operational Management</span>
+          <h3 class="solution-card__title">For Plant Managers</h3>
+          <p class="solution-card__desc">Unified history, budget control, and zero operational blindness. All in a single dashboard.</p>
+        </div>
+
+        <!-- Card 2: Contratistas -->
+        <div class="solution-card solution-card--blue animate-on-scroll" id="solutionContractor">
+          <div class="solution-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <span class="solution-card__tag">Multi-Tenant</span>
+          <h3 class="solution-card__title">For Contractor Firms</h3>
+          <p class="solution-card__desc">White-label reports, technician routing, and multi-tenant management to scale your B2B operation.</p>
+        </div>
+
+        <!-- Card 3: Técnicos -->
+        <div class="solution-card solution-card--dark animate-on-scroll" id="solutionTech">
+          <div class="solution-card__icon">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
+          </div>
+          <span class="solution-card__tag">Low Friction</span>
+          <h3 class="solution-card__title">For Floor Technicians</h3>
+          <p class="solution-card__desc">Low-friction interface, PIN/OTP login, and field stock visualization. Designed for gloves.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="testimonials section section--light" id="testimonials">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          Testimonials
+        </span>
+        <h2 class="section-title">What industrial leaders say.</h2>
+        <p class="section-subtitle">Real companies that transformed their maintenance with FixCore.</p>
+      </div>
+
+      <div class="testimonials__grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card animate-on-scroll" id="testimonial1">
+          <div class="testimonial-card__stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">
+            With FixCore I stopped digging through WhatsApp chats at the end of the month. Everything is centralized and stops are resolved faster. It was a before and after for our operation.
+          </p>
+          <div class="testimonial-card__author">
+            <img class="testimonial-card__avatar" src="assets/img/testimonial-carla.png" alt="Carla García" />
+            <div>
+              <div class="testimonial-card__name">Carla García</div>
+              <div class="testimonial-card__role">Plant Manager — InduPro Mexico</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card animate-on-scroll" id="testimonial2">
+          <div class="testimonial-card__stars">
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+            <svg viewBox="0 0 20 20" fill="currentColor"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/></svg>
+          </div>
+          <p class="testimonial-card__quote">
+            The multi-client portal allowed us to scale. Now we send automatic reports with our own logo to the factories we serve. FixCore is our competitive advantage.
+          </p>
+          <div class="testimonial-card__author">
+            <img class="testimonial-card__avatar" src="assets/img/testimonial-victor.png" alt="Víctor Salazar" />
+            <div>
+              <div class="testimonial-card__name">Víctor Salazar</div>
+              <div class="testimonial-card__role">B2B Operations Manager — SolMex Services</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRICING ===== -->
+  <section class="pricing section" id="pricing">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          Transparent Pricing
+        </span>
+        <h2 class="section-title">Plans designed to scale with you.</h2>
+        <p class="section-subtitle">Start for free, grow when you are ready. No hidden costs or lock-in contracts.</p>
+      </div>
+
+      <!-- Toggle Monthly / Annual -->
+      <div class="pricing__toggle">
+        <span class="pricing__toggle-label active" id="toggleMonthly" onclick="togglePricing('monthly')">Monthly</span>
+        <button class="pricing__toggle-switch" id="pricingSwitch" onclick="togglePricingSwitch()" aria-label="Cambiar entre mensual y anual"></button>
+        <span class="pricing__toggle-label" id="toggleAnnual" onclick="togglePricing('annual')">Annual</span>
+        <span class="pricing__save-badge">Save 20%</span>
+      </div>
+
+      <div class="pricing__grid">
+
+        <!-- ===== PLAN FREEMIUM ===== -->
+        <div class="pricing-card animate-on-scroll" id="planFree">
+          <div class="pricing-card__header">
+            <div class="pricing-card__icon pricing-card__icon--free">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="pricing-card__name">Starter</h3>
+            <p class="pricing-card__desc">Frictionless trial. Ideal to validate the platform in your plant before scaling.</p>
+          </div>
+
+          <div class="pricing-card__price">
+            <span class="pricing-card__amount pricing-card__amount--free">Free</span>
+          </div>
+          <p class="pricing-card__period-note">Forever • No credit card required</p>
+
+          <div class="pricing-card__divider"></div>
+
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Up to 3 critical machines
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited QR reports
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              1 technical user
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Basic Work Orders
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              30-day history
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--excluded">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              WhatsApp Alerts
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--excluded">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+              Management reports
+            </li>
+          </ul>
+
+          <a href="login.html#register" target="_blank" class="pricing-card__cta pricing-card__cta--outline" id="ctaFree">
+            Comenzar Gratis
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- ===== PLAN DE PLANTA ===== -->
+        <div class="pricing-card pricing-card--featured animate-on-scroll" id="planPlant">
+          <div class="pricing-card__popular">⭐ Most Popular</div>
+          <div class="pricing-card__header">
+            <div class="pricing-card__icon pricing-card__icon--plant">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2"/><path d="M9 22v-4h6v4"/><path d="M8 6h.01"/><path d="M16 6h.01"/><path d="M12 6h.01"/><path d="M12 10h.01"/><path d="M16 10h.01"/><path d="M8 10h.01"/></svg>
+            </div>
+            <h3 class="pricing-card__name">Plant</h3>
+            <p class="pricing-card__desc">For individual factories. Everything your management and operators need.</p>
+          </div>
+
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount" data-monthly="89" data-annual="71">89</span>
+            <span class="pricing-card__period">USD / month</span>
+          </div>
+          <p class="pricing-card__period-note">
+            <span class="pricing-annual-note" style="display:none;">Billed annually ($852/year)</span>
+            <span class="pricing-monthly-note">≈ S/ 330 per month • Monthly billing</span>
+          </p>
+
+          <div class="pricing-card__divider"></div>
+
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature pricing-card__feature--included pricing-card__feature--highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited machines
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included pricing-card__feature--highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Up to 10 active technicians
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited management users
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Real-time WhatsApp alerts
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Inventory and stock control
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              MTTR and availability reports
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited complete history
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Priority support
+            </li>
+          </ul>
+
+          <a href="login.html#register" target="_blank" class="pricing-card__cta pricing-card__cta--primary" id="ctaPlant">
+            Suscribirse Ahora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+        <!-- ===== PLAN CONTRATISTA ===== -->
+        <div class="pricing-card animate-on-scroll" id="planContractor">
+          <div class="pricing-card__header">
+            <div class="pricing-card__icon pricing-card__icon--contractor">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+            </div>
+            <h3 class="pricing-card__name">Contractor</h3>
+            <p class="pricing-card__desc">For B2B maintenance firms managing multiple factories. Scale without limits.</p>
+          </div>
+
+          <div class="pricing-card__price">
+            <span class="pricing-card__currency">$</span>
+            <span class="pricing-card__amount" data-monthly="29" data-annual="23">29</span>
+            <span class="pricing-card__period">USD / tech / month</span>
+          </div>
+          <p class="pricing-card__period-note">
+            <span class="pricing-annual-note" style="display:none;">Billed annually per technician ($276/tech/year)</span>
+            <span class="pricing-monthly-note">Unlimited clients and plants included</span>
+          </p>
+
+          <div class="pricing-card__divider"></div>
+
+          <ul class="pricing-card__features">
+            <li class="pricing-card__feature pricing-card__feature--included pricing-card__feature--highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Unlimited clients/plants
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included pricing-card__feature--highlight">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Complete multi-tenant portal
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              White-label reports with your logo
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Technician routing and dispatch
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              REST API + Webhooks
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              ERP Integration (SAP, Oracle)
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Everything in Plant Plan
+            </li>
+            <li class="pricing-card__feature pricing-card__feature--included">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+              Dedicated onboarding
+            </li>
+          </ul>
+
+          <a href="login.html#register" target="_blank" class="pricing-card__cta pricing-card__cta--orange" id="ctaContractor">
+            Suscribirse Ahora
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Guarantee -->
+      <div class="pricing__guarantee animate-on-scroll">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        14-day free trial on all paid plans • No credit card required • Cancel anytime
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq section" id="faq">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Frequently Asked Questions
+        </span>
+        <h2 class="section-title">Have questions about FixCore?</h2>
+        <p class="section-subtitle">Quick answers to our clients' most common doubts.</p>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq-item active" id="faq1">
+          <div class="faq-item__header" onclick="toggleFaq(this)">
+            <span class="faq-item__question">Do I need to install special hardware?</span>
+            <span class="faq-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">No. FixCore is 100% SaaS and runs in the cloud. You only need a smartphone or tablet to scan QR codes that you can print with any printer. No IoT sensors or special infrastructure required to start.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq2">
+          <div class="faq-item__header" onclick="toggleFaq(this)">
+            <span class="faq-item__question">How does charging per field technician work?</span>
+            <span class="faq-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">Our model is per active field technician license. Operators who only report failures (scan QR) do not count as a license. You only pay for technicians who receive and close Work Orders. We include unlimited management users.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq3">
+          <div class="faq-item__header" onclick="toggleFaq(this)">
+            <span class="faq-item__question">Is it difficult for older operators to learn how to use it?</span>
+            <span class="faq-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">FixCore was designed with operators of all ages in mind. The reporting flow is just 3 clicks: scan, select failure type, and send. It does not require creating an account or remembering passwords. Our clients report full adoption in less than a week.</p>
+          </div>
+        </div>
+
+        <div class="faq-item" id="faq4">
+          <div class="faq-item__header" onclick="toggleFaq(this)">
+            <span class="faq-item__question">Can I integrate FixCore with my current ERP?</span>
+            <span class="faq-item__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            </span>
+          </div>
+          <div class="faq-item__body">
+            <p class="faq-item__answer">Yes. We offer a documented REST API and configurable webhooks that you can connect to SAP, Oracle, Microsoft Dynamics, or any other ERP. We also support integration via n8n and Zapier for no-code automations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== BOTTOM CTA ===== -->
+  <section class="bottom-cta" id="demo">
+    <div class="container bottom-cta__inner">
+      <h2 class="bottom-cta__title animate-on-scroll">Ready to protect your capital assets?</h2>
+      <p class="bottom-cta__subtitle animate-on-scroll">Join the companies that already reduced their downtime with FixCore.</p>
+      <a href="#" class="btn btn--green btn--lg animate-on-scroll" id="bottomCtaBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+        Comienza tu Prueba Gratuita
+      </a>
+      <p class="bottom-cta__fine-print animate-on-scroll">No credit card required • 3-machine pilot • Cancel anytime</p>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" id="footer">
+    <div class="container footer__inner">
+      <a href="#" class="footer__logo">
+        <svg width="28" height="28" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <polygon points="50,5 93,27.5 93,72.5 50,95 7,72.5 7,27.5" fill="none" stroke="url(#footLogoGrad)" stroke-width="7" stroke-linejoin="round"/>
+          <circle cx="50" cy="50" r="10" fill="#4da3ff"/>
+          <defs>
+            <linearGradient id="footLogoGrad" x1="0" y1="0" x2="100" y2="100">
+              <stop offset="0%" stop-color="#4da3ff"/>
+              <stop offset="100%" stop-color="#8ec5ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>FixCore</span>
+      </a>
+
+      <nav class="footer__links">
+        <a href="#" id="footerSupport">Support</a>
+        <a href="#" id="footerAPI">API / Webhooks</a>
+        <a href="#" id="footerPrivacy">Privacy Policy</a>
+        <a href="#" id="footerTerms">B2B Terms</a>
+      </nav>
+
+      <span class="footer__copy">&copy; 2026 FixCore. All rights reserved.</span>
+    </div>
+  </footer>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // ---- Language Toggle Scroll Position ----
+    function saveScroll() {
+      sessionStorage.setItem('langScroll', window.scrollY);
+    }
+    
+    window.addEventListener('DOMContentLoaded', () => {
+      const savedScroll = sessionStorage.getItem('langScroll');
+      if (savedScroll !== null) {
+        window.scrollTo({ top: parseInt(savedScroll, 10), behavior: 'instant' });
+        sessionStorage.removeItem('langScroll');
+      }
+    });
+
+    // ---- Header Scroll Effect ----
+    const header = document.getElementById('header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > 20) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+      lastScroll = currentScroll;
+    });
+
+    // ---- Mobile Menu Toggle ----
+    const mobileToggle = document.getElementById('mobileToggle');
+    const mainNav = document.getElementById('mainNav');
+
+    mobileToggle.addEventListener('click', () => {
+      mainNav.classList.toggle('active');
+      const spans = mobileToggle.querySelectorAll('span');
+      if (mainNav.classList.contains('active')) {
+        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+        spans[1].style.opacity = '0';
+        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
+      } else {
+        spans[0].style.transform = 'none';
+        spans[1].style.opacity = '1';
+        spans[2].style.transform = 'none';
+      }
+    });
+
+    // ---- Smooth Scroll for Nav Links ----
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          // Close mobile menu if open
+          mainNav.classList.remove('active');
+          const spans = mobileToggle.querySelectorAll('span');
+          spans[0].style.transform = 'none';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = 'none';
+        }
+      });
+    });
+
+    // ---- FAQ Accordion ----
+    function toggleFaq(headerEl) {
+      const faqItem = headerEl.parentElement;
+      const isActive = faqItem.classList.contains('active');
+
+      // Close all
+      document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+      });
+
+      // Open clicked (if was closed)
+      if (!isActive) {
+        faqItem.classList.add('active');
+      }
+    }
+
+    // ---- Scroll Animations (Intersection Observer) ----
+    const observerOptions = {
+      threshold: 0.15,
+      rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, observerOptions);
+
+    document.querySelectorAll('.animate-on-scroll').forEach(el => {
+      observer.observe(el);
+    });
+
+    // ---- Counter Animation ----
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const counters = entry.target.querySelectorAll('[data-count]');
+          counters.forEach(counter => {
+            const target = parseInt(counter.getAttribute('data-count'));
+            const isFixed = counter.getAttribute('data-fixed') === 'true';
+            if (isFixed) {
+              counter.textContent = '0';
+              return;
+            }
+            const duration = 2000;
+            const increment = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+              current += increment;
+              if (current < target) {
+                counter.textContent = Math.ceil(current).toLocaleString('es-MX');
+                requestAnimationFrame(updateCounter);
+              } else {
+                counter.textContent = target.toLocaleString('es-MX');
+              }
+            };
+            updateCounter();
+          });
+          counterObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    const statsSection = document.getElementById('stats');
+    if (statsSection) {
+      counterObserver.observe(statsSection);
+    }
+
+    // ---- Pricing Toggle (Monthly/Annual) ----
+    let isAnnual = false;
+
+    function togglePricingSwitch() {
+      isAnnual = !isAnnual;
+      updatePricingUI();
+    }
+
+    function togglePricing(mode) {
+      isAnnual = mode === 'annual';
+      updatePricingUI();
+    }
+
+    function updatePricingUI() {
+      const switchEl = document.getElementById('pricingSwitch');
+      const monthlyLabel = document.getElementById('toggleMonthly');
+      const annualLabel = document.getElementById('toggleAnnual');
+
+      if (isAnnual) {
+        switchEl.classList.add('active');
+        monthlyLabel.classList.remove('active');
+        annualLabel.classList.add('active');
+      } else {
+        switchEl.classList.remove('active');
+        monthlyLabel.classList.add('active');
+        annualLabel.classList.remove('active');
+      }
+
+      // Update prices with animation
+      document.querySelectorAll('.pricing-card__amount[data-monthly]').forEach(el => {
+        const monthly = el.getAttribute('data-monthly');
+        const annual = el.getAttribute('data-annual');
+        const target = isAnnual ? annual : monthly;
+
+        el.style.transition = 'opacity 0.2s, transform 0.2s';
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(-8px)';
+
+        setTimeout(() => {
+          el.textContent = target;
+          el.style.opacity = '1';
+          el.style.transform = 'translateY(0)';
+        }, 200);
+      });
+
+      // Toggle notes
+      document.querySelectorAll('.pricing-annual-note').forEach(el => {
+        el.style.display = isAnnual ? 'inline' : 'none';
+      });
+      document.querySelectorAll('.pricing-monthly-note').forEach(el => {
+        el.style.display = isAnnual ? 'none' : 'inline';
+      });
+    }
+  </script>
+</body>
+</html>
