@@ -53,7 +53,7 @@
           <a href="index.html" class="lang-toggle__btn active" onclick="saveScroll()">ES</a>
           <a href="index-en.html" class="lang-toggle__btn" onclick="saveScroll()">EN</a>
         </div>
-        <a href="login.html#login" class="btn btn--ghost" id="loginBtn">Iniciar Sesión</a>
+        <a href="https://fixcore-app.vercel.app/login?lang=es" class="btn btn--ghost" id="loginBtn">Iniciar Sesión</a>
         <a href="login.html#register" class="btn btn--primary" id="demoBtn">Solicitar Demo</a>
       </div>
 
@@ -897,6 +897,20 @@
         el.style.display = isAnnual ? 'none' : 'inline';
       });
     }
+  </script>
+  <!-- FixCore app link: Vercel in production, the local Next.js dev server when the landing runs locally. -->
+  <script>
+    (function () {
+      var FIXCORE_APP_URL = "https://fixcore-app.vercel.app"; // replace with the real Vercel domain
+      var local = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+      var base = local ? "http://localhost:3000" : FIXCORE_APP_URL;
+      var loginLink = document.getElementById("loginBtn");
+      if (loginLink) loginLink.href = base + "/login?lang=es";
+      var demoLink = document.getElementById("demoBtn");
+      if (demoLink) demoLink.href = base + "/registro?lang=es";
+      var heroBtn = document.getElementById("heroPrimaryBtn");
+      if (heroBtn) heroBtn.href = base + "/registro?lang=es";
+    })();
   </script>
 </body>
 </html>

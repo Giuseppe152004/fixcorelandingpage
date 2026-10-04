@@ -1155,7 +1155,8 @@
 
           setTimeout(() => {
             alert.textContent = 'Redirigiendo...';
-            window.location.href = 'https://app.tudominio.com/dashboard'; // Conexión al aplicativo web
+            var local = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+            window.location.href = (local ? "http://localhost:3000" : "https://fixcore-app.vercel.app") + '/dashboard';
           }, 2000);
         } else {
           // Error
@@ -1235,7 +1236,8 @@
         });
 
         setTimeout(() => {
-          window.location.href = 'https://app.tudominio.com/onboarding'; // Conexión al aplicativo web
+          var local = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
+          window.location.href = (local ? "http://localhost:3000" : "https://fixcore-app.vercel.app") + '/dashboard';
         }, 2000);
       }, 1800);
     }
