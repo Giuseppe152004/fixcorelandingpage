@@ -12,10 +12,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
   <!-- Stylesheet -->
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="public/assets/styles/style.css" />
 
   <!-- Favicon (inline SVG) -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a1628'/><polygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='%232d7dd2' stroke-width='2.5'/><circle cx='16' cy='16' r='4' fill='%234da3ff'/></svg>" />
+  <link rel="icon" href="favicon.ico" sizes="any" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%230a1628'/><polygon points='16,4 28,10 28,22 16,28 4,22 4,10' fill='none' stroke='%232d7dd2' stroke-width='2.5'/><circle cx='16' cy='16' r='4' fill='%234da3ff'/></svg>" />
 </head>
 <body>
 
@@ -46,18 +47,20 @@
         <a href="#solutions">Soluciones</a>
         <a href="#pricing">Precios</a>
         <a href="#faq">FAQ</a>
+        <a href="https://fixcore-app.vercel.app/login" class="header__nav-mobile-only" data-app-link="login">Iniciar Sesión</a>
+        <a href="https://fixcore-app.vercel.app/registro" class="btn btn--primary header__nav-mobile-only" data-app-link="registro">Solicitar Demo</a>
       </nav>
 
       <div class="header__actions">
         <div class="lang-toggle">
-          <a href="index.html" class="lang-toggle__btn active" onclick="saveScroll()">ES</a>
-          <a href="index-en.html" class="lang-toggle__btn" onclick="saveScroll()">EN</a>
+          <a href="index.html" class="lang-toggle__btn active" aria-current="page" onclick="saveScroll()" hreflang="es">ES</a>
+          <a href="index-en.html" class="lang-toggle__btn" onclick="saveScroll()" hreflang="en">EN</a>
         </div>
-        <a href="https://fixcore-app.vercel.app/login?lang=es" class="btn btn--ghost" id="loginBtn">Iniciar Sesión</a>
-        <a href="login.html#register" class="btn btn--primary" id="demoBtn">Solicitar Demo</a>
+        <a href="https://fixcore-app.vercel.app/login?lang=es" class="btn btn--ghost" id="loginBtn" data-app-link="login">Iniciar Sesión</a>
+        <a href="https://fixcore-app.vercel.app/registro" class="btn btn--primary" id="demoBtn" data-app-link="registro">Solicitar Demo</a>
       </div>
 
-      <button class="header__mobile-toggle" id="mobileToggle" aria-label="Abrir menú">
+      <button class="header__mobile-toggle" id="mobileToggle" type="button" aria-controls="mainNav" aria-expanded="false" aria-label="Abrir menú">
         <span></span>
         <span></span>
         <span></span>
@@ -89,7 +92,7 @@
 
         <!-- CTA Buttons -->
         <div class="hero__cta">
-          <a href="login.html#register" class="btn btn--primary btn--lg" id="heroPrimaryBtn">
+          <a href="https://fixcore-app.vercel.app/registro" class="btn btn--primary btn--lg" id="heroPrimaryBtn" data-app-link="registro">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
             Prueba Gratis
           </a>
@@ -135,10 +138,10 @@
       <!-- Visual Mockup -->
       <div class="hero__visual">
         <div class="hero__visual-dashboard">
-          <img src="assets/img/dashboard-mockup.png" alt="Dashboard FixCore - Gráficos de MTTR y disponibilidad de activos" loading="eager" />
+          <img src="public/assets/images/dashboard-mockup.png" alt="Dashboard FixCore - Gráficos de MTTR y disponibilidad de activos" loading="eager" />
         </div>
         <div class="hero__visual-phone">
-          <img src="assets/img/phone-qr-mockup.png" alt="App móvil FixCore escaneando código QR industrial" loading="eager" />
+          <img src="public/assets/images/phone-qr-mockup.png" alt="App móvil FixCore escaneando código QR industrial" loading="eager" />
         </div>
       </div>
     </div>
@@ -326,7 +329,7 @@
           </div>
           <span class="solution-card__tag">Baja Fricción</span>
           <h3 class="solution-card__title">Para Técnicos de Piso</h3>
-          <p class="solution-card__desc">Interfaz de baja fricción, login con PIN/OTP y visualización de stock en campo. Diseñado para guantes.</p>
+          <p class="solution-card__desc">Interfaz de baja fricción, acceso con PIN/OTP y visualización de stock en campo. Diseñado para guantes.</p>
         </div>
       </div>
     </div>
@@ -358,7 +361,7 @@
             Con FixCore dejé de hurgar en chats de WhatsApp a fin de mes. Todo está centralizado y las paradas se resuelven más rápido. Fue un antes y un después para nuestra operación.
           </p>
           <div class="testimonial-card__author">
-            <img class="testimonial-card__avatar" src="assets/img/testimonial-carla.png" alt="Carla García" />
+            <img class="testimonial-card__avatar" width="52" height="52" loading="lazy" src="public/assets/images/testimonial-carla.png" alt="Carla García" />
             <div>
               <div class="testimonial-card__name">Carla García</div>
               <div class="testimonial-card__role">Jefa de Planta — InduPro México</div>
@@ -379,7 +382,7 @@
             El portal multi-cliente nos permitió escalar. Ahora enviamos reportes automáticos con nuestro propio logo a las fábricas que atendemos. FixCore es nuestra ventaja competitiva.
           </p>
           <div class="testimonial-card__author">
-            <img class="testimonial-card__avatar" src="assets/img/testimonial-victor.png" alt="Víctor Salazar" />
+            <img class="testimonial-card__avatar" width="52" height="52" loading="lazy" src="public/assets/images/testimonial-victor.png" alt="Víctor Salazar" />
             <div>
               <div class="testimonial-card__name">Víctor Salazar</div>
               <div class="testimonial-card__role">Gerente de Operaciones B2B — SolMex Servicios</div>
@@ -405,7 +408,7 @@
       <!-- Toggle Mensual / Anual -->
       <div class="pricing__toggle">
         <span class="pricing__toggle-label active" id="toggleMonthly" onclick="togglePricing('monthly')">Mensual</span>
-        <button class="pricing__toggle-switch" id="pricingSwitch" onclick="togglePricingSwitch()" aria-label="Cambiar entre mensual y anual"></button>
+        <button class="pricing__toggle-switch" id="pricingSwitch" type="button" role="switch" aria-checked="false" onclick="togglePricingSwitch()" aria-label="Cambiar entre mensual y anual"></button>
         <span class="pricing__toggle-label" id="toggleAnnual" onclick="togglePricing('annual')">Anual</span>
         <span class="pricing__save-badge">Ahorra 20%</span>
       </div>
@@ -460,7 +463,7 @@
             </li>
           </ul>
 
-          <a href="login.html#register" target="_blank" class="pricing-card__cta pricing-card__cta--outline" id="ctaFree">
+          <a href="https://fixcore-app.vercel.app/registro" data-app-link="registro" class="pricing-card__cta pricing-card__cta--outline" id="ctaFree">
             Comenzar Gratis
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
           </a>
@@ -524,7 +527,7 @@
             </li>
           </ul>
 
-          <a href="login.html#register" target="_blank" class="pricing-card__cta pricing-card__cta--primary" id="ctaPlant">
+          <a href="https://fixcore-app.vercel.app/registro" data-app-link="registro" class="pricing-card__cta pricing-card__cta--primary" id="ctaPlant">
             Suscribirse Ahora
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
           </a>
@@ -587,7 +590,7 @@
             </li>
           </ul>
 
-          <a href="login.html#register" target="_blank" class="pricing-card__cta pricing-card__cta--orange" id="ctaContractor">
+          <a href="https://fixcore-app.vercel.app/registro" data-app-link="registro" class="pricing-card__cta pricing-card__cta--orange" id="ctaContractor">
             Suscribirse Ahora
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
           </a>
@@ -672,7 +675,7 @@
     <div class="container bottom-cta__inner">
       <h2 class="bottom-cta__title animate-on-scroll">¿Listo para proteger tus bienes de capital?</h2>
       <p class="bottom-cta__subtitle animate-on-scroll">Únete a las empresas que ya redujeron sus tiempos muertos con FixCore.</p>
-      <a href="#" class="btn btn--green btn--lg animate-on-scroll" id="bottomCtaBtn">
+      <a href="https://fixcore-app.vercel.app/registro" class="btn btn--green btn--lg animate-on-scroll" id="bottomCtaBtn" data-app-link="registro">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
         Comienza tu Prueba Gratuita
       </a>
@@ -698,7 +701,7 @@
       </a>
 
       <nav class="footer__links">
-        <a href="#" id="footerSupport">Soporte</a>
+        <a href="#faq" id="footerSupport">Soporte</a>
         <a href="#" id="footerAPI">API / Webhooks</a>
         <a href="#" id="footerPrivacy">Política de Privacidad</a>
         <a href="terms.html" id="footerTerms">Términos y Condiciones</a>
@@ -708,209 +711,6 @@
     </div>
   </footer>
 
-  <!-- ===== JAVASCRIPT ===== -->
-  <script>
-    // ---- Language Toggle Scroll Position ----
-    function saveScroll() {
-      sessionStorage.setItem('langScroll', window.scrollY);
-    }
-    
-    window.addEventListener('DOMContentLoaded', () => {
-      const savedScroll = sessionStorage.getItem('langScroll');
-      if (savedScroll !== null) {
-        window.scrollTo({ top: parseInt(savedScroll, 10), behavior: 'instant' });
-        sessionStorage.removeItem('langScroll');
-      }
-    });
-
-    // ---- Header Scroll Effect ----
-    const header = document.getElementById('header');
-    let lastScroll = 0;
-
-    window.addEventListener('scroll', () => {
-      const currentScroll = window.scrollY;
-      if (currentScroll > 20) {
-        header.classList.add('scrolled');
-      } else {
-        header.classList.remove('scrolled');
-      }
-      lastScroll = currentScroll;
-    });
-
-    // ---- Mobile Menu Toggle ----
-    const mobileToggle = document.getElementById('mobileToggle');
-    const mainNav = document.getElementById('mainNav');
-
-    mobileToggle.addEventListener('click', () => {
-      mainNav.classList.toggle('active');
-      const spans = mobileToggle.querySelectorAll('span');
-      if (mainNav.classList.contains('active')) {
-        spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
-        spans[1].style.opacity = '0';
-        spans[2].style.transform = 'rotate(-45deg) translate(5px, -5px)';
-      } else {
-        spans[0].style.transform = 'none';
-        spans[1].style.opacity = '1';
-        spans[2].style.transform = 'none';
-      }
-    });
-
-    // ---- Smooth Scroll for Nav Links ----
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function(e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          // Close mobile menu if open
-          mainNav.classList.remove('active');
-          const spans = mobileToggle.querySelectorAll('span');
-          spans[0].style.transform = 'none';
-          spans[1].style.opacity = '1';
-          spans[2].style.transform = 'none';
-        }
-      });
-    });
-
-    // ---- FAQ Accordion ----
-    function toggleFaq(headerEl) {
-      const faqItem = headerEl.parentElement;
-      const isActive = faqItem.classList.contains('active');
-
-      // Close all
-      document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-      });
-
-      // Open clicked (if was closed)
-      if (!isActive) {
-        faqItem.classList.add('active');
-      }
-    }
-
-    // ---- Scroll Animations (Intersection Observer) ----
-    const observerOptions = {
-      threshold: 0.15,
-      rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, observerOptions);
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-      observer.observe(el);
-    });
-
-    // ---- Counter Animation ----
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const counters = entry.target.querySelectorAll('[data-count]');
-          counters.forEach(counter => {
-            const target = parseInt(counter.getAttribute('data-count'));
-            const isFixed = counter.getAttribute('data-fixed') === 'true';
-            if (isFixed) {
-              counter.textContent = '0';
-              return;
-            }
-            const duration = 2000;
-            const increment = target / (duration / 16);
-            let current = 0;
-
-            const updateCounter = () => {
-              current += increment;
-              if (current < target) {
-                counter.textContent = Math.ceil(current).toLocaleString('es-MX');
-                requestAnimationFrame(updateCounter);
-              } else {
-                counter.textContent = target.toLocaleString('es-MX');
-              }
-            };
-            updateCounter();
-          });
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.5 });
-
-    const statsSection = document.getElementById('stats');
-    if (statsSection) {
-      counterObserver.observe(statsSection);
-    }
-
-    // ---- Pricing Toggle (Monthly/Annual) ----
-    let isAnnual = false;
-
-    function togglePricingSwitch() {
-      isAnnual = !isAnnual;
-      updatePricingUI();
-    }
-
-    function togglePricing(mode) {
-      isAnnual = mode === 'annual';
-      updatePricingUI();
-    }
-
-    function updatePricingUI() {
-      const switchEl = document.getElementById('pricingSwitch');
-      const monthlyLabel = document.getElementById('toggleMonthly');
-      const annualLabel = document.getElementById('toggleAnnual');
-
-      if (isAnnual) {
-        switchEl.classList.add('active');
-        monthlyLabel.classList.remove('active');
-        annualLabel.classList.add('active');
-      } else {
-        switchEl.classList.remove('active');
-        monthlyLabel.classList.add('active');
-        annualLabel.classList.remove('active');
-      }
-
-      // Update prices with animation
-      document.querySelectorAll('.pricing-card__amount[data-monthly]').forEach(el => {
-        const monthly = el.getAttribute('data-monthly');
-        const annual = el.getAttribute('data-annual');
-        const target = isAnnual ? annual : monthly;
-
-        el.style.transition = 'opacity 0.2s, transform 0.2s';
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(-8px)';
-
-        setTimeout(() => {
-          el.textContent = target;
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }, 200);
-      });
-
-      // Toggle notes
-      document.querySelectorAll('.pricing-annual-note').forEach(el => {
-        el.style.display = isAnnual ? 'inline' : 'none';
-      });
-      document.querySelectorAll('.pricing-monthly-note').forEach(el => {
-        el.style.display = isAnnual ? 'none' : 'inline';
-      });
-    }
-  </script>
-  <!-- FixCore app link: Vercel in production, the local Next.js dev server when the landing runs locally. -->
-  <script>
-    (function () {
-      var FIXCORE_APP_URL = "https://fixcore-app.vercel.app"; // replace with the real Vercel domain
-      var local = location.protocol === "file:" || /^(localhost|127\.0\.0\.1|\[::1\])$/.test(location.hostname);
-      var base = local ? "http://localhost:3000" : FIXCORE_APP_URL;
-      var loginLink = document.getElementById("loginBtn");
-      if (loginLink) loginLink.href = base + "/login?lang=es";
-      var demoLink = document.getElementById("demoBtn");
-      if (demoLink) demoLink.href = base + "/registro?lang=es";
-      var heroBtn = document.getElementById("heroPrimaryBtn");
-      if (heroBtn) heroBtn.href = base + "/registro?lang=es";
-    })();
-  </script>
+  <script src="public/assets/scripts/main.js"></script>
 </body>
 </html>
